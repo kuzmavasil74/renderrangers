@@ -15,7 +15,7 @@ export async function getTopBooks() {
   try {
     const response = await axios.get(`${baseUrl}top-books`);
     console.log(response.data);
-    return response.data;
+    return await response.data;
   } catch (error) {
     console.log(error);
   }
