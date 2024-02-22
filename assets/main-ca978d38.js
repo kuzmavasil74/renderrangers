@@ -1,0 +1,13 @@
+import{a as c}from"./vendor-0cb09735.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function s(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(t){if(t.ep)return;t.ep=!0;const o=s(t);fetch(t.href,o)}})();console.log("mobile menu");const a={categoryListElem:document.querySelector(".js-category-list"),supportList:document.querySelector(".js-support-list"),scrollBtn:document.querySelector(".js-support-btn"),scrollToTopBtn:document.querySelector(".js-scrollToTopBtn")},u="https://books-backend.p.goit.global/books/";async function l(e,r){try{return(await c.get(u+e,{params:r})).data}catch(s){console.error(s)}}const p=async()=>{const e=await l("category-list");e.unshift({list_name:"ALL CATEGORIES"}),console.log(e)};p();console.log("category-list");console.log("Top book");const g=async()=>{const e=await l("top-books");console.log(e)};g();const m=[{title:"Save the Children",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:"stc"},{title:"Project HOPE",url:"https://www.projecthope.org/country/ukraine/",img:"hope"},{title:"UNITED24",url:"https://u24.gov.ua/uk",img:"u24"},{title:"International Medical Corps",url:"https://internationalmedicalcorps.org/country/ukraine/",img:"imc"},{title:"Medicins Sans Frontieres",url:"https://www.msf.org/ukraine",img:"msf"},{title:"RAZOM",url:"https://www.razomforukraine.org/",img:"razom"},{title:"Action against hunger",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:"aah"},{title:"World vision",url:"https://www.wvi.org/emergencies/ukraine",img:"wv"},{title:"Serhiy Prytula Charity Foundation",url:"https://prytulafoundation.org/en",img:"prytula"}];h(m);function d(e){const{title:r,url:s,img:n}=e;return`
+    <li class="support-item">
+      <a
+        class="support-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        arial-label="${r}"
+        href="${s}"
+      >
+        <img class="support-img" src="./img/support/${n}.png" alt="${r}" />
+      </a>
+    </li>`}function f(e){return e.map(d).join("")}function h(e){const r=f(e);a.supportList.insertAdjacentHTML("beforeend",r)}console.log("pop up");console.log("category-card");
+//# sourceMappingURL=main-ca978d38.js.map
