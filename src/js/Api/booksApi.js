@@ -5,7 +5,6 @@ const baseUrl = 'https://books-backend.p.goit.global/books/';
 export async function getCategoryList() {
   try {
     const response = await axios.get(`${baseUrl}category-list`);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -14,8 +13,7 @@ export async function getCategoryList() {
 export async function getTopBooks() {
   try {
     const response = await axios.get(`${baseUrl}top-books`);
-    console.log(response.data);
-    return await response.data;
+    return response.data;
   } catch (error) {
     console.log(error);
   }

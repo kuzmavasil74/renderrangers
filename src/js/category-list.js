@@ -1,5 +1,5 @@
-import { refs } from './refs';
-import { getCategoryList, getCategory } from './booksApi';
+/* import { refs } from './refs';
+import { getCategoryList, getCategory } from './Api/booksApi';
 
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
@@ -18,10 +18,6 @@ function selectedCategory(e) {
     //use localstorage for saving active item
     getData();
   }
-  console.log(refs.categoryListElem.childNodes);
-  // use function for remove class
-  //add class active
-  console.log(getCategory(categoryName));
 }
 
 function categoryTemplate({ list_name }) {
@@ -47,4 +43,5 @@ const getData = async () => {
   // малюємо дані на сторінці
   renderCategories(cat);
 };
-getData();
+getData(); */
+console.log('category-list');
