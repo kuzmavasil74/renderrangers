@@ -7,8 +7,12 @@ function selectedCategory(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return; // користувач клікнув між кнопками
   }
-  const categoryName = e.target.textContent;
-  if (categoryName === 'ALL CATEGORIES') {
+  const categoryName = e.target;
+  categoryName.classList.add('active');
+  if (
+    categoryName.textContent === 'ALL CATEGORIES' &&
+    !categoryName.classList.contains('active')
+  ) {
     // create function where using method foreach remove active
     //then add class active for button
     //use localstorage for saving active item
