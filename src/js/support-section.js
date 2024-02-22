@@ -16,7 +16,7 @@ function supportTemplate(item) {
         arial-label="${title}"
         href="${url}"
       >
-        <img class="support-img" src="${img}" alt="${title}" />
+        <img class="support-img" src="./img/support/${img}.png" alt="${title}" />
       </a>
     </li>`;
 }

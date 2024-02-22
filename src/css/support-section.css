@@ -1,0 +1,8 @@
+.js-support-list {
+  box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
+  background: radial-gradient(
+    189% 190% at 60% -24%,
+    rgb(79, 46, 232) 18%,
+    rgb(255, 255, 255) 100%
+  );
+}
