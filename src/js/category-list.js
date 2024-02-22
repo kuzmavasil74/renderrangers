@@ -33,6 +33,7 @@ function renderCategories(categoryList) {
 
   refs.categoryListElem.insertAdjacentHTML('beforeend', markup);
 }
+*/
 //aсинхронна функція чекає на відповідь з сервера
 const getData = async () => {
   //run loading написати загрузку
@@ -41,7 +42,8 @@ const getData = async () => {
   const cat = await getDataBooks('category-list');
   cat.unshift({ list_name: 'ALL CATEGORIES' });
   // малюємо дані на сторінці
-  renderCategories(cat);
+  /* renderCategories(cat); */
+  console.log(categoryBooks);
 };
-getData(); */
+getData();
 console.log('category-list');
