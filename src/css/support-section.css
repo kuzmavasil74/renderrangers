@@ -1,8 +1,29 @@
-.js-support-list {
+.wrapper {
+  padding: 24px 40px;
+  width: 356px;
+  height: 472px;
+  overflow-y: auto;
   box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
   background: radial-gradient(
     189% 190% at 60% -24%,
     rgb(79, 46, 232) 18%,
     rgb(255, 255, 255) 100%
   );
+}
+.support-title {
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  color: var(--white);
+  margin-bottom: 42px;
+}
+.js-support-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.support-svg-icon {
+  stroke: black;
 }

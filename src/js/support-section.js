@@ -1,12 +1,11 @@
 import { supportList } from '../db/supportList';
 import { refs } from './refs';
-
+/* refs.scrollBtn.addEventListener('click', handleClickButton); */
 renderSupportList(supportList);
 
 function supportTemplate(item) {
   //що там в item
   const { title, url, img } = item;
-  console.log(item);
   return `
     <li class="support-item">
       <a
@@ -25,6 +24,5 @@ function supportListTemplate(supportList) {
 }
 function renderSupportList(supportList) {
   const markup = supportListTemplate(supportList);
-
   refs.supportList.insertAdjacentHTML('beforeend', markup);
 }
