@@ -1,6 +1,6 @@
-/* import { refs } from './refs';
-import { getDataBooks } from './Api/ubooksApi';
-
+import { refs } from './refs';
+import { getDataBooks } from './Api/uBooksApi';
+/*
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
 function selectedCategory(e) {
@@ -43,7 +43,7 @@ const getData = async () => {
   cat.unshift({ list_name: 'ALL CATEGORIES' });
   // малюємо дані на сторінці
   /* renderCategories(cat); */
-  console.log(categoryBooks);
+  console.log(cat);
 };
 getData();
 console.log('category-list');
