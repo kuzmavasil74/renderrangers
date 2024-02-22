@@ -7,7 +7,9 @@
 @import url('./base.css');
 @import url('./reset.css');
 @import url('./header.css');
-@import url('./mobileMenu.css');
+@import url('./mobile-menu.css');
+@import url('./category-list.css');
+@import url('./support-section.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

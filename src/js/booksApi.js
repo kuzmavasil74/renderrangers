@@ -38,7 +38,8 @@ export async function getBookById(id) {
     console.log(error);
   }
 }
-
+/* how to use */
+/* import { getCategoryList, getCategory } from './booksApi'; */
 /* getCategoryList(); */
 /* getTopBooks(); */
 /* getBookById('643282b1e85766588626a0dc'); */

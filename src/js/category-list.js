@@ -19,11 +19,11 @@ function selectedCategory(e) {
   //add class active
   console.log(getCategory(categoryName));
 }
+
 function categoryTemplate({ list_name }) {
   return `<li class="category-list">
-<button>${list_name}</button>
-</li>
-`;
+      <button class="category-button" type="button">${list_name}</button>
+    </li>`;
 }
 function categoriesTemplate(categoryList) {
   return categoryList.map(categoryTemplate).join('');

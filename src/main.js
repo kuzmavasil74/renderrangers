@@ -1,4 +1,4 @@
-/* import './js/menu'; */
+/* import './js/mobile-menu'; */
 import './js/booksApi';
 import './js/category-list';
 /* import AOS from 'aos';
