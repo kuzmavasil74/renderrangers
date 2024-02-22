@@ -36,3 +36,22 @@ body {
   font-size: 14px;
   background-color: var(--white);
 }
+
+.container {
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: aqua;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 704px;
+    padding: 0 32px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1152px;
+    padding: 0 24px;
+  }
+}
