@@ -1,20 +1,19 @@
 import axios from 'axios';
 
-const baseUrl = 'https://books-backend.p.goit.global/book/';
+const baseUrl = 'https://books-backend.p.goit.global/books/';
 
-export async function getCategoryList(endPoint, paramsRequest) {
+export async function getDataBooks(endPoint, paramsRequest) {
   try {
     const response = await axios.get(baseUrl + endPoint, {
       params: paramsRequest,
     });
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);
   }
 }
 /* Hardcover Nonfiction */
-const par = {
+/* const par = {
   category: 'Hardcover Nonfiction',
 };
-getCategoryList('category', par);
+getDataBooks('category', par); */

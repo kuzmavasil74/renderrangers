@@ -1,5 +1,5 @@
 /* import { refs } from './refs';
-import { getCategoryList, getCategory } from './Api/booksApi';
+import { getDataBooks } from './Api/ubooksApi';
 
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
@@ -38,7 +38,7 @@ const getData = async () => {
   //run loading написати загрузку
 
   // чекаємо на дані
-  const cat = await getCategoryList();
+  const cat = await getDataBooks('category-list');
   cat.unshift({ list_name: 'ALL CATEGORIES' });
   // малюємо дані на сторінці
   renderCategories(cat);
