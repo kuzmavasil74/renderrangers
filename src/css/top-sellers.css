@@ -1,3 +1,7 @@
+aside {
+    display: none;
+}
+
 .seller-section {
   padding-top: 40px;
 }
@@ -8,6 +12,7 @@
   line-height: 1.18;
   letter-spacing: -0.04em;
   color: var(--black);
+
   padding-bottom: 40px;
 }
 
@@ -24,7 +29,11 @@
   text-transform: uppercase;
   color: #b4afaf;
   font-weight: 400;
+
+  margin-bottom: 16px;
 }
+
+
 
 @media only screen and (min-width: 768px) {
   .section-title {
