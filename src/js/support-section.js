@@ -1,6 +1,15 @@
 import { supportList } from '../db/supportList';
 import { refs } from './refs';
-/* refs.scrollBtn.addEventListener('click', handleClickButton); */
+refs.scrollBtn.addEventListener('click', handleClickButton);
+function handleClickButton() {
+  refs.scrollBtn.classList.toggle('isDown');
+  const divWrapper = refs.supportList.parentElement;
+  if (refs.scrollBtn.classList.contains('isDown')) {
+    divWrapper.scrollTop = divWrapper.scrollHeight;
+  } else {
+    divWrapper.scrollTop = 0;
+  }
+}
 /* renderSupportList(supportList); */
 
 function supportTemplate(item) {
