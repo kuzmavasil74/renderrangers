@@ -1,0 +1,29 @@
+.shopping-list {
+    width: 375px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-list-text {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: #111;
+    margin-bottom: 120px;
+}
+
+.shopping-list-span {
+    color: #4f2ee8;
+}
+
+.shopping-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-list-container-text {
+    text-align: center;
+}
