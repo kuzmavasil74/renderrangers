@@ -1,15 +1,34 @@
+.seller-section {
+  padding-top: 40px;
+}
+
 .section-title {
   font-weight: 700;
-  font-size: 48px;
-  line-height: 1.08;
+  font-size: 32px;
+  line-height: 1.18;
   letter-spacing: -0.04em;
   color: var(--black);
+  padding-bottom: 40px;
 }
 
 .accent {
-    color: var(--violet);
+  color: var(--violet);
 }
 
 .sellers-list {
-    
+}
+
+.sellers-category-title {
+  line-height: 1.28;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #b4afaf;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-title {
+    font-size: 48px;
+    line-height: 1.08;
+  }
 }

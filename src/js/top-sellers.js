@@ -3,22 +3,20 @@ import { getDataBooks } from './Api/uBooksApi';
 
 const booksList = document.getElementById('books-list');
 
-//aсинхронна функція чекає на відповідь з сервера
+
 const getTopBooksData = async () => {
   //run loading написати загрузку
 
-  // чекаємо на дані
-  /* const topBooks = await getTopBooks(); */
+  
   const topBooks = await getDataBooks('top-books');
-  // малюємо дані на сторінці
-  console.log(topBooks);
-  /* renderTopBooks(topBooks); */
-  const randomBooks = getRandomBooks(topBooks, 4); // Вибираємо 4 випадкові книги
+
+  const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
   renderTopBooks(randomBooks);
 };
 
 getTopBooksData();
 
+//  функція для рандому
 
 function getRandomBooks(books, count) {
   const randomIndexes = [];
@@ -37,8 +35,8 @@ function getRandomBooks(books, count) {
 
 function renderTopBooks(topBooks) {
   const fragment = createMarkUp(topBooks);
-  booksList.innerHTML = ''; // Очищення вмісту перед додаванням нового
-  booksList.appendChild(fragment); // Додавання фрагменту до DOM
+  booksList.innerHTML = ''; // очищення вмісту перед додаванням нового
+  booksList.appendChild(fragment); // додавання фрагменту до DOM
 }
 
 // створення розмітки категорій книг
@@ -69,7 +67,11 @@ function generateListItems(books) {
   books.forEach(({ book_image, title, author, _id }) => {
     items += `
       <li class="sellers-item" data-id="${_id}">
-        <img class="book-image" src="${book_image}" alt="${title}">
+        <img class="book-image"
+        src="${book_image}"
+        alt="${title}"
+        width="335"
+        height="485">
         <h3 class="book-title">${title}</h3>
         <p class="book-author">${author}</p>
       </li>
