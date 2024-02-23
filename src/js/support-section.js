@@ -1,12 +1,13 @@
 import { supportList } from '../db/supportList';
+import renderMarkup from './helpers/renderMarkup';
 import scrollContainer from './helpers/scrollSection';
 import { refs } from './refs';
-refs.scrollBtn.addEventListener('click', handleClickButton);
-function handleClickButton() {
-  scrollContainer(refs.scrollBtn, refs.supportList, 'isDown');
-}
-renderSupportList(supportList);
-
+// handle button click
+refs.scrollBtn.addEventListener('click', () =>
+  scrollContainer(refs.scrollBtn, refs.supportList, 'isDown')
+);
+// малюємо дані на сторінці
+renderMarkup(supportTemplate, refs.supportList, supportList);
 function supportTemplate(item) {
   //що там в item
   const { title, url, img } = item;
@@ -22,11 +23,4 @@ function supportTemplate(item) {
         <img class="support-img" src="./img/support/${img}.png" alt="${title}" />
       </a>
     </li>`;
-}
-function supportListTemplate(supportList) {
-  return supportList.map(supportTemplate).join('');
-}
-function renderSupportList(supportList) {
-  const markup = supportListTemplate(supportList);
-  refs.supportList.insertAdjacentHTML('beforeend', markup);
 }

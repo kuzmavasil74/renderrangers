@@ -1,7 +1,7 @@
 console.log('Top book');
 import { getDataBooks } from './Api/uBooksApi';
 //aсинхронна функція чекає на відповідь з сервера
-const getTopBooksData = async () => {
+export const getTopBooksData = async () => {
   //run loading написати загрузку
 
   // чекаємо на дані
