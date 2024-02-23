@@ -47,10 +47,8 @@ body {
 }
 
 .container {
-  border: 1px solid red;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: aqua;
 }
 @media screen and (min-width: 768px) {
   .container {
