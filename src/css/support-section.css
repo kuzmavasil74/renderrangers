@@ -20,6 +20,8 @@
   margin-bottom: 42px;
 }
 .js-support-list {
+  height: 300px;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -1,16 +1,11 @@
 import { supportList } from '../db/supportList';
+import scrollContainer from './helpers/scrollSection';
 import { refs } from './refs';
 refs.scrollBtn.addEventListener('click', handleClickButton);
 function handleClickButton() {
-  refs.scrollBtn.classList.toggle('isDown');
-  const divWrapper = refs.supportList.parentElement;
-  if (refs.scrollBtn.classList.contains('isDown')) {
-    divWrapper.scrollTop = divWrapper.scrollHeight;
-  } else {
-    divWrapper.scrollTop = 0;
-  }
+  scrollContainer(refs.scrollBtn, refs.supportList, 'isDown');
 }
-/* renderSupportList(supportList); */
+renderSupportList(supportList);
 
 function supportTemplate(item) {
   //що там в item
