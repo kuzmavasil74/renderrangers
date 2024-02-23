@@ -1,7 +1,7 @@
 import { supportList } from '../db/supportList';
 import { refs } from './refs';
 /* refs.scrollBtn.addEventListener('click', handleClickButton); */
-renderSupportList(supportList);
+/* renderSupportList(supportList); */
 
 function supportTemplate(item) {
   //що там в item
