@@ -10,4 +10,4 @@ import{a as c}from"./vendor-0cb09735.js";(function(){const r=document.createElem
         <img class="support-img" src="./img/support/${n}.png" alt="${r}" />
       </a>
     </li>`}function f(e){return e.map(d).join("")}function h(e){const r=f(e);a.supportList.insertAdjacentHTML("beforeend",r)}console.log("pop up");console.log("category-card");
-//# sourceMappingURL=main-ca978d38.js.map
+//# sourceMappingURL=main-6e2ab8ff.js.map
