@@ -8,5 +8,9 @@ function mapTemplate(template, data) {
 }
 export default function renderMarkup(template, element, data) {
   const markup = mapTemplate(template, data);
-  element.insertAdjacentHTML('beforeend', markup);
+  if (element === null) {
+    return markup;
+  } else {
+    element.insertAdjacentHTML('beforeend', markup);
+  }
 }
