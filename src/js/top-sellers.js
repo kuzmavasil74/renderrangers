@@ -10,14 +10,18 @@ const getTopBooksData = async () => {
   // малюємо дані на сторінці
   console.log(topBooks);
   /* renderTopBooks(topBooks); */
+booksList.innerHTML = createMarkUp(topBooks)
+
 };
 getTopBooksData();
+
+const booksList = document.getElementById('books-list');
 
 // markup
 
 function createMarkUp(results) {
   const markUp = results.map(
-    ({ list_name, books: { book_image, title, author, _id } }) => {
+    ({ list_name, books: { book_image, title, author, _id } }) => 
       `<li class="sellers-category">
         <h2 class="sellers-category-title">${list_name}</h2>
         <ul class="sellers-category-list">
@@ -47,8 +51,8 @@ function createMarkUp(results) {
                 <p class="book-author">${author}</p>
             </li>
         </ul>
-      </li>`;
-    }
-  );
+      </li>`
+  ).join('');
+  console.log(markUp)
   return markUp;
 }
