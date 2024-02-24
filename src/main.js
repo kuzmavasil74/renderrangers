@@ -2,7 +2,7 @@ import './js/mobile-menu';
 import './js/category-list';
 import './js/top-sellers';
 import './js/support-section';
-import './js/pop-up';
+import './js/modal';
 import './js/login';
 import './js/category-list';
 import './js/category-card';
