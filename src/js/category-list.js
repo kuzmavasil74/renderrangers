@@ -38,10 +38,10 @@ const getData = async () => {
 };
 getData();
 
-function categoryTemplate({ list_name, classActive = null }) {
+function categoryTemplate({ list_name, classActive = '' }) {
   /*   let active = '';
   list_name === 'ALL CATEGORIES' ? (active = 'active') : (active = ''); */
-  return `<li class="category-list">
+  return `<li class="category-item">
   
       <button class="category-button ${classActive}" type="button">${list_name}</button>
     </li>`;
