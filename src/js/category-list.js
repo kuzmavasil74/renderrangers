@@ -20,9 +20,10 @@ function selectedCategory(e) {
     // create function where using method foreach remove active
     //then add class active for button
     //use localstorage for saving active item
-
     getTopBooksData();
   } else {
+    /* refs.categoryCardSection.innerHTML = ""; */
+    /* refs.topSellerSection.innerHTML = ""; */
     getCategoryBooks({ category: listItem.firstElementChild.textContent });
   }
 }
