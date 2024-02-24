@@ -9,14 +9,18 @@
   </head>
   <body>
     <load src="partials/header.html" />
-    <main>
-      <aside>
+
+    <div class="container">
+      <aside class="aside">
         <load src="partials/category-list.html" />
         <load src="partials/support-section.html" />
       </aside>
-      <load src="partials/top-sellers.html" />
-    </main>
-    <load src="partials/pop-up.html" />
+      <main class="main">
+        <load src="partials/top-sellers.html" />
+        <load src="partials/category-card.html" />
+      </main>
+    </div>
+    <load src="partials/modal.html" />
     <load src="partials/login.html" />
     <script type="module" src="./main.js"></script>
   </body>

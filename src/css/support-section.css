@@ -1,6 +1,6 @@
 .wrapper {
+  width: 335px;
   padding: 24px 40px;
-  width: 356px;
   height: 472px;
   overflow-y: auto;
   box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
@@ -20,10 +20,17 @@
   margin-bottom: 42px;
 }
 .js-support-list {
+  height: 300px;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 .support-svg-icon {
   stroke: black;
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1440px) {
 }
