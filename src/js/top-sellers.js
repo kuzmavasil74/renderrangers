@@ -1,20 +1,25 @@
-console.log('Top book');
 import { getDataBooks } from './Api/uBooksApi';
-//aсинхронна функція чекає на відповідь з сервера
+
+const booksList = document.getElementById('books-list');
+
+// отримання даних з серверу
 export const getTopBooksData = async () => {
   //run loading написати загрузку
 
-  
-  const topBooks = await getDataBooks('top-books');
-
-  const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
-  renderTopBooks(randomBooks);
+  try {
+    const topBooks = await getDataBooks('top-books'); // запит на сервер
+    const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
+    renderTopBooks(randomBooks); // рендер розмітки
+  } catch (err) {
+    console.error(err);
+  } finally {
+    // ховаємо лоадер
+  }
 };
 
 getTopBooksData();
 
-//  функція для рандому
-
+//  функція для рандомного вибору 4 категорій з масиву книг
 function getRandomBooks(books, count) {
   const randomIndexes = [];
 
@@ -29,7 +34,6 @@ function getRandomBooks(books, count) {
 }
 
 // рендер сторінки
-
 function renderTopBooks(topBooks) {
   const fragment = createMarkUp(topBooks);
   booksList.innerHTML = ''; // очищення вмісту перед додаванням нового
@@ -37,7 +41,6 @@ function renderTopBooks(topBooks) {
 }
 
 // створення розмітки категорій книг
-
 function createMarkUp(results) {
   const fragment = document.createDocumentFragment();
 
@@ -49,6 +52,7 @@ function createMarkUp(results) {
       <ul class="sellers-category-list">
         ${generateListItems(books)}
       </ul>
+      <button class="sellers-button" type="button">see more</button>
     `;
     fragment.appendChild(li);
   });
@@ -57,11 +61,14 @@ function createMarkUp(results) {
 }
 
 // створення розмітки однієї книги
-
 function generateListItems(books) {
   let items = '';
+  const screenSize = getScreenSize(); // визначення розміру екрану
+  const maxItems =
+    screenSize === 'desktop' ? 5 : screenSize === 'tablet' ? 3 : 1; // визначення кількості айтемів
 
-  books.forEach(({ book_image, title, author, _id }) => {
+  for (let i = 0; i < maxItems && i < books.length; i++) {
+    const { book_image, title, author, _id } = books[i];
     items += `
       <li class="sellers-item" data-id="${_id}">
         <img class="book-image"
@@ -73,7 +80,32 @@ function generateListItems(books) {
         <p class="book-author">${author}</p>
       </li>
     `;
-  });
+  }
 
   return items;
+}
+
+// визначення розмірів екрану
+function getScreenSize() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    return 'mobile';
+  } else if (screenWidth < 1200) {
+    return 'tablet';
+  } else {
+    return 'desktop';
+  }
+}
+
+// визначення кількості елементів залежно від розміру екрану
+function getBooksCountByScreenSize(screenSize) {
+  switch (screenSize) {
+    case 'mobile':
+      return 1; // один елемент на мобільному
+    case 'tablet':
+      return 3; // три елементи на планшеті
+    case 'desktop':
+    default:
+      return 5; // п'ять елементів на десктопі
+  }
 }
