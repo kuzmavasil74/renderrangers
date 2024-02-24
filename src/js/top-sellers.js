@@ -71,11 +71,12 @@ function generateListItems(books) {
     const { book_image, title, author, _id } = books[i];
     items += `
       <li class="sellers-item" data-id="${_id}">
-        <img class="book-image"
-        src="${book_image}"
-        alt="${title}"
-        width="335"
-        height="485">
+        <div class="book-image-wrapper">
+          <img class="book-image"
+          src="${book_image}"
+          alt="${title}"
+          >
+        </div>
         <h3 class="book-title">${title}</h3>
         <p class="book-author">${author}</p>
       </li>
