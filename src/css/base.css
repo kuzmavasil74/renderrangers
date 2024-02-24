@@ -52,7 +52,6 @@ body {
   max-width: 375px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
 }
 .aside {
   display: flex;
@@ -71,6 +70,9 @@ body {
   }
 }
 @media screen and (min-width: 1440px) {
+  .container-flex-xl {
+    display: flex;
+  }
   .container {
     max-width: 1440px;
     padding: 0 24px;
