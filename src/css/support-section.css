@@ -80,3 +80,6 @@
 .swiper-button-hidden {
   display: none;
 }
+.icon-revert {
+  transform: rotate(180deg);
+}
