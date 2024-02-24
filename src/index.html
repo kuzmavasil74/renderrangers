@@ -2,22 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
+    <link type="image/svg+xml" href="./img/favicon.svg" rel="icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <load src="partials/header.html" />
-    <main>
-      <aside>
+    <div class="container container-flex-xl">
+      <aside class="aside">
         <load src="partials/category-list.html" />
         <load src="partials/support-section.html" />
       </aside>
-      <load src="partials/top-sellers.html" />
-    </main>
-    <load src="partials/pop-up.html" />
+      <main class="main">
+        <load src="partials/top-sellers.html" />
+        <load src="partials/category-card.html" />
+      </main>
+    </div>
+    <!-- <load src="partials/modal.html" /> -->
     <load src="partials/login.html" />
+    <!-- <load src="partials/mobile-menu.html" /> -->
     <script type="module" src="./main.js"></script>
   </body>
 </html>

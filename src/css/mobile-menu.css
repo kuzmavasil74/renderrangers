@@ -1,1 +1,63 @@
+.menu-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 100vh;
+  background: radial-gradient(189% 190% at 60% -24%, rgb(79, 46, 232) 18%, rgb(255, 255, 255) 100%);
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
 
+}
+.btn-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EAC645;
+    font-style: normal;
+
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+
+    border-radius: 36px;
+    padding: 8px 16px;
+    width: 72px;
+    height: 34px;
+  }
+  .link-box{
+    padding-top: 247px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+  .link-page-2{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .bag-icons{
+    vertical-align: top;
+  }
+  .books-box{
+    padding-top: 126px;
+  }
+  .books-list{
+    display: flex;
+    flex-wrap: wrap;
+    transform: rotate(341deg);
+  }
+  .books-item{
+      transform: rotate(15deg);
+  }
