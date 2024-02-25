@@ -7,13 +7,26 @@ import { refs } from './refs';
 export const getCategoryBooks = async params => {
   // Clear the container before inserting new category data
   refs.categoryCardElem.innerHTML = '';
-
+  refs.topSellerSection.innerHTML = '';
   try {
     // Fetch category books data from the server
     const categoryBooks = await getDataBooks('category', params);
 
+    // Remove existing category title if it exists
+    const existingCategoryTitle = refs.categoryCardElem.querySelector(
+      '.category-card-title'
+    );
+    if (existingCategoryTitle) {
+      existingCategoryTitle.remove();
+    }
+
     // Insert the category name on the page
     const categoryName = categoryBooks[0].list_name;
+
+    document.querySelectorAll('.category-card-title').forEach(element => {
+      element.remove();
+    });
+
     refs.categoryCardElem.insertAdjacentHTML(
       'beforebegin',
       booksCategoryTemplate(categoryName)
