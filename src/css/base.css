@@ -36,6 +36,9 @@ body.dark-theme h1 {
   gap: 40px;
   height: fit-content;
 }
+.display-none {
+  display: none;
+}
 @media screen and (max-width: 767.99px) {
   .sellers-item:nth-child(n + 2) {
     display: none;
