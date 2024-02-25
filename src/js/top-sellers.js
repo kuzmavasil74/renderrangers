@@ -76,6 +76,7 @@ function createMarkUp(results) {
       </ul>
       <button class="sellers-button" type="button">See more</button>
     `;
+    
     fragment.appendChild(li);
   });
 
