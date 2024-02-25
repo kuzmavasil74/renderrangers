@@ -1,14 +1,10 @@
-/* h2 */
-.category-card-title {
-  font-size: 48px;
-  line-height: 52px;
-  padding-bottom: 40px;
-}
 /* section */
 .js-category-card {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  padding-top: 28px;
   padding-bottom: 100px;
 }
 /* div in section */
@@ -16,6 +12,15 @@
   padding: 40px 20px 0px 20px;
   max-width: 1440px;
   min-width: 320px;
+}
+/* h2 */
+.category-card-title {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  font-size: 48px;
+  line-height: 52px;
+  padding-bottom: 40px;
 }
 /* li */
 .card-book-item {
