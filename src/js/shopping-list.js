@@ -35,27 +35,15 @@ if (LS.has('cart')) {
 }
 function templateEmpty(book) {
   console.log(book);
-  return `<section class="shopping-list">
-        <h1 class="shopping-list-text">
-          Shopping <span class="shopping-list-span">List</span>
-        </h1>
-        <div class="shopping-list-container">
-          <p class="shopping-list-container-text">
+  return `<p class="shopping-list-container-text">
             This page is empty, add some books <br />
             and proceed to order.
-          </p>
-        </div>
-      </section>`;
+          </p>`;
 }
 
-function templateList(book) {
+function templateList({ book_image, title, list_name }) {
   console.log(book);
-  return `<section class="shopping-list">
-        <h2 class="shopping-list-text">
-          Shopping <span class="shopping-list-span">List</span>
-        </h2>
-        <div class="shopping-list-container">
-        <ul class="shopping-list">
+  return `<ul class="shopping-list">
   <li class="shopping-item">
     <img class="shopping-img" src="${book_image}" alt="${title}" width="100" height="142" />
     <svg class="header-logo-icon-bookshelf" width="12" height="12">
@@ -80,7 +68,5 @@ function templateList(book) {
       </li>
     </ul>
   </li>
-</ul>
-        </div>
-      </section>`;
+</ul>`;
 }
