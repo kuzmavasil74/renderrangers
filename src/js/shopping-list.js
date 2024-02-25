@@ -21,7 +21,7 @@ export const getCategoryBooks = async () => {
   );
   renderMarkup(booksTemplate, refs.categoryCardElem, categoryBooks); */
 };
-getCategoryBooks();
+/* getCategoryBooks(); */
 /* LS.set(key, value);
 LS.get(key);
  cart*/
