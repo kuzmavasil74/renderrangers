@@ -9,14 +9,19 @@
   </head>
   <body>
     <load src="partials/header.html" />
-    <div class="container">
+    <div class="container container-flex-xl">
       <aside class="aside">
         <load src="partials/support-section.html" />
       </aside>
       <main class="main">
-        <load src="partials/category-list.html" />
+        <section class="shopping-list">
+          <h1 class="shopping-list-text">
+            Shopping <span class="shopping-list-span">List</span>
+          </h1>
+          <div class="shopping-list-container js-shopping-main"></div>
+        </section>
       </main>
     </div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/shopping-list.js"></script>
   </body>
 </html>

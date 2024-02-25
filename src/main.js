@@ -6,6 +6,7 @@ import './js/modal';
 import './js/login';
 import './js/category-list';
 import './js/category-card';
+import './js/header';
 
 /* import AOS from 'aos';
 import 'aos/dist/aos.css';
