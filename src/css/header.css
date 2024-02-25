@@ -1,4 +1,4 @@
-.icon-bookshelf {
+.header-logo-icon-bookshelf {
   fill: var(--black-1);
 }
 
@@ -63,19 +63,19 @@ body.dark-theme .burger-menu-icon {
 }
 
 .header-logo-icon-bookshelf {
-  /* transition: fill 350ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: fill 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-logo-link:hover,
 .header-logo-link:focus,
 .header-logo-icon-bookshelf:hover,
 .header-logo-icon-bookshelf:focus {
-  /* fill: var(--color-blue-component); */
+  /* fill: var(--violet); */
 }
 
 .header-logo-icon {
   text-align: center;
-  /* transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user-choice {
@@ -126,8 +126,8 @@ body.dark-theme .burger-menu-icon {
 
 .checkbox-input:checked+label {
   left: 21px;
-  background-color: var(--ligtht-theme);
-  box-shadow: inset 0px -3px 5px 0px var(--color-blue-component);
+  background-color: var(--white);
+  box-shadow: inset 0px -3px 5px 0px var(--violet);
 }
 
 .checkbox-lable {
@@ -154,13 +154,13 @@ body.dark-theme .burger-menu-icon {
 }
 
 .burger-menu-icon {
-  background: var(--dark-theme-componemt);
+  background: var(--white);
   transition: stroke 250ms ease-in-out, transform 550ms ease-in-out;
 }
 
 .burger-menu-icon:hover,
 .burger-menu-icon:focus {
-  stroke: var(--color-yellow-componemt);
+  /* stroke: var(--yellow); */
   transform: rotate(360deg);
 }
 
