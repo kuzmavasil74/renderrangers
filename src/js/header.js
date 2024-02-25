@@ -7,12 +7,16 @@ checkboxInput.addEventListener('change', function () {
     localStorage.setItem('theme', 'dark-theme');
   } else {
     body.classList.remove('dark-theme');
-    localStorage.setItem('theme', 'ldark-theme');
+    localStorage.setItem('theme', '');
   }
 });
 window.onload = setActive;
 function setActive() {
-  body.classList.add(localStorage.getItem('theme'));
+  let theme = localStorage.getItem('theme');
+  if (theme === 'dark-theme') {
+    body.classList.add(theme);
+    checkboxInput.checked = true;
+  }
   const aObj = document.querySelector('.header-nav').getElementsByTagName('a');
   for (let i = 0; i < aObj.length; i++) {
     if (document.location.href.indexOf(aObj[i].href) >= 0) {
