@@ -7,7 +7,9 @@
   --heading: #b4afaf;
   --ff-primary: 'DM Sans', sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--ff-primary);
   font-size: 14px;
