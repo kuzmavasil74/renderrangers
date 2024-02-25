@@ -52,7 +52,6 @@ body {
   max-width: 375px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
 }
 .aside {
   display: flex;
@@ -60,7 +59,16 @@ body {
   gap: 40px;
   height: fit-content;
 }
-
+@media screen and (max-width: 767.99px) {
+  .sellers-item:nth-child(n + 2) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1439.99px) {
+  .sellers-item:nth-child(n + 4) {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -71,6 +79,9 @@ body {
   }
 }
 @media screen and (min-width: 1440px) {
+  .container-flex-xl {
+    display: flex;
+  }
   .container {
     max-width: 1440px;
     padding: 0 24px;
