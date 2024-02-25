@@ -20,6 +20,7 @@ ul {
 }
 
 a {
+  width: max-content;
   color: currentColor;
   text-decoration: none;
 }

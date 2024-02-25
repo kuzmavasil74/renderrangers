@@ -1,4 +1,5 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
+@import url('./fonts.css');
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./header.css');
@@ -7,3 +8,4 @@
 @import url('./support-section.css');
 @import url('./login.css');
 @import url('./top-sellers.css');
+@import url('./category-card.css');
