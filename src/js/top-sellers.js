@@ -1,11 +1,24 @@
 import { getDataBooks } from './Api/uBooksApi';
 import { getLoader } from './helpers/loader';
-const booksList = document.getElementById('books-list');
+const sellerSection = document.querySelector('.seller-section');
+
+//  створення контейнеру для даних з серверу
+const booksList = document.createElement('ul');
+booksList.classList.add('sellers-list');
+booksList.innerHTML = `<span class="loader"></span>`;
+
+// розмітка секції
+sellerSection.innerHTML = `
+  <h1 class="section-title">
+    Best Sellers <span class="accent">Books</span>
+  </h1>`;
+sellerSection.appendChild(booksList); // додаємо пустий список книг
 
 // отримання даних з серверу
 export const getTopBooksData = async () => {
-  //run loading написати загрузку
+  // виводимо лоадер
   getLoader();
+
   try {
     const topBooks = await getDataBooks('top-books'); // запит на сервер
     const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
@@ -21,11 +34,8 @@ export const getTopBooksData = async () => {
         card.classList.remove('animation-items');
       });
     }, 500);
-
   } catch (err) {
     console.error(err);
-  } finally {
-    // ховаємо лоадер
   }
 };
 
