@@ -7,6 +7,15 @@
   --heading: #b4afaf;
   --ff-primary: 'DM Sans', sans-serif;
 }
+
+ul,
+li,
+a,
+h1,
+h2,
+h3 {
+  list-style: none;
+  text-decoration: none;
 html {
   scroll-behavior: smooth;
 }
