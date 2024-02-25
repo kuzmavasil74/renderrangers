@@ -10,6 +10,18 @@ export const getTopBooksData = async () => {
     const topBooks = await getDataBooks('top-books'); // запит на сервер
     const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
     renderTopBooks(randomBooks); // рендер розмітки
+
+    // анімація завантаження на сторінку
+    const animatedCards = document.querySelectorAll('.sellers-item');
+    animatedCards.forEach(card => {
+      card.classList.add('animation-items');
+    });
+    const disappearance = setTimeout(() => {
+      animatedCards.forEach(card => {
+        card.classList.remove('animation-items');
+      });
+    }, 500);
+
   } catch (err) {
     console.error(err);
   } finally {
@@ -52,7 +64,7 @@ function createMarkUp(results) {
       <ul class="sellers-category-list">
         ${generateListItems(books)}
       </ul>
-      <button class="sellers-button" type="button">see more</button>
+      <button class="sellers-button" type="button">See more</button>
     `;
     fragment.appendChild(li);
   });
