@@ -8,6 +8,7 @@ export const refs = {
   topSellerSection: document.querySelector('.seller-section'),
   /* support */
   supportList: document.querySelector('.swiper-wrapper'),
+  scrollBtn: document.querySelector('.js-support-btn'),
   /* button to top */
   scrollToTopBtn: document.querySelector('.js-scrollToTopBtn'),
 };
