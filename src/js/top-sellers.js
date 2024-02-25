@@ -1,11 +1,11 @@
 import { getDataBooks } from './Api/uBooksApi';
-
+import { getLoader } from './helpers/loader';
 const booksList = document.getElementById('books-list');
 
 // отримання даних з серверу
 export const getTopBooksData = async () => {
   //run loading написати загрузку
-
+  getLoader();
   try {
     const topBooks = await getDataBooks('top-books'); // запит на сервер
     const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
