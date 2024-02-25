@@ -6,7 +6,15 @@ import { refs } from './refs';
 // Function to fetch and display category books
 export const getCategoryBooks = async params => {
   // Clear the container before inserting new category data
-  refs.categoryCardElem.innerHTML = '';
+
+  if (refs.topSellersSection) {
+    refs.topSellersSection.innerHTML = '';
+  } else {
+    // refs.categoryCardElem.previousSibling.innerHTML = '';
+    console.log(refs.categoryCardElem);
+    refs.categoryCardElem.innerHTML = '';
+    document.querySelector('h2').innerHTML = '';
+  }
 
   try {
     // Fetch category books data from the server
@@ -14,11 +22,11 @@ export const getCategoryBooks = async params => {
 
     // Insert the category name on the page
     const categoryName = categoryBooks[0].list_name;
-    refs.categoryCardElem.insertAdjacentHTML(
-      'beforebegin',
-      booksCategoryTemplate(categoryName)
-    );
-
+    // refs.categoryCardElem.insertAdjacentHTML(
+    //   'beforebegin',
+    //   booksCategoryTemplate(categoryName)
+    // );
+    document.querySelector('h2').innerHTML = categoryName;
     // Insert the list of books on the page
     renderMarkup(booksTemplate, refs.categoryCardElem, categoryBooks);
   } catch (error) {
@@ -27,11 +35,12 @@ export const getCategoryBooks = async params => {
 };
 
 // Function to create markup for the category name
-function booksCategoryTemplate(catTitle) {
-  return `
-      <h2 class="category-card-title">${catTitle}</h2>
-    `;
-}
+// function booksCategoryTemplate(catTitle) {
+
+//   return `
+//       <h2 class="category-card-title">${catTitle}</h2>
+//     `;
+// }
 
 // Function to create markup for a single book
 function booksTemplate({ book_image, title, author, _id }) {
