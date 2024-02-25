@@ -6,7 +6,6 @@ export default function renderMarkup(template, element, data) {
   if (element === null) {
     return markup;
   } else {
-    element.innerHTML = '';
     element.insertAdjacentHTML('beforeend', markup);
   }
 }
