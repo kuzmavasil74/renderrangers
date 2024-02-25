@@ -1,0 +1,52 @@
+/* h2 */
+.category-card-title {
+  font-size: 48px;
+  line-height: 52px;
+  padding-bottom: 40px;
+}
+/* section */
+.js-category-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 100px;
+}
+/* div in section */
+.js-category-card__container {
+  padding: 40px 20px 0px 20px;
+  max-width: 1440px;
+  min-width: 320px;
+}
+/* li */
+.card-book-item {
+  padding-top: 40px;
+}
+/* image */
+.card-book-image {
+  border-radius: 8px;
+  width: 180px;
+  height: 256px;
+}
+/* h3(tittle for book) */
+.card-book-title {
+  width: 180px;
+  padding-top: 14px;
+  /* font-weight: 700; */
+  font-size: 16px;
+  line-height: 18px;
+  /* letter -4%; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* width: calc((100% - 96px) / 5); */
+}
+/* p (description, author)*/
+.card-book-author {
+  width: 180px;
+  padding-top: 4px;
+  font-size: 12px;
+  line-height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

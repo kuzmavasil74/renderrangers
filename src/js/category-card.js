@@ -53,8 +53,7 @@ function booksTemplate({ book_image, title, author, _id }) {
         <img class="card-book-image"
         src="${book_image}"
         alt="${title}"
-        width="335"
-        height="485">
+        >
         <h3 class="card-book-title">${title}</h3>
         <p class="card-book-author">${author}</p>
       </li>
