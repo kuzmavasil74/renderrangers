@@ -12,6 +12,10 @@ body.dark-theme .header-nav .current {
   color: var(--black-1);
 }
 
+body.dark-theme .header-nav-link {
+  color: (--white);
+}
+
 body.dark-theme .current:hover,
 body.dark-theme .current:focus {
   color: var(--white);
@@ -57,6 +61,7 @@ body.dark-theme .burger-menu-icon {
   display: flex;
   align-items: center;
 }
+
 
 .header-logo-link {
   display: flex;
