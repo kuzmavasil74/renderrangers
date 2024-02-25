@@ -16,6 +16,8 @@ h2,
 h3 {
   list-style: none;
   text-decoration: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
