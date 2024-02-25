@@ -7,6 +7,7 @@
   --heading: #b4afaf;
   --ff-primary: 'DM Sans', sans-serif;
 }
+
 ul,
 li,
 a,
@@ -15,6 +16,8 @@ h2,
 h3 {
   list-style: none;
   text-decoration: none;
+html {
+  scroll-behavior: smooth;
 }
 body {
   font-family: var(--ff-primary);
@@ -43,6 +46,9 @@ body.dark-theme h1 {
   flex-wrap: wrap;
   gap: 40px;
   height: fit-content;
+}
+.display-none {
+  display: none;
 }
 @media screen and (max-width: 767.99px) {
   .sellers-item:nth-child(n + 2) {
