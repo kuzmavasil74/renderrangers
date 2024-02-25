@@ -1,28 +1,29 @@
 import { refs } from './refs';
 import { getDataBooks } from './Api/uBooksApi';
+import { getCategoryBooks } from './category-card';
+import { getTopBooksData } from './top-sellers';
 
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
 function selectedCategory(e) {
-  if (e.target.nodeName !== 'BUTTON') {
+  if (e.target.nodeName !== 'BUTTON' || e.target.classList.contains('active')) {
     return; // користувач клікнув між кнопками
   }
+  refs.categoryListElem.querySelector('.active').classList.remove('active');
   const categoryName = e.target;
   categoryName.classList.add('active');
-  if (
-    categoryName.textContent === 'ALL CATEGORIES' &&
-    !categoryName.classList.contains('active')
-  ) {
+  if (categoryName.textContent === 'ALL CATEGORIES') {
     // create function where using method foreach remove active
     //then add class active for button
     //use localstorage for saving active item
-    getData();
+    getTopBooksData();
+  } else {
+    getCategoryBooks({ category: categoryName.textContent });
   }
 }
-
-function categoryTemplate({ list_name }) {
+function categoryTemplate({ list_name, classButton = '' }) {
   return `<li class="category-list">
-      <button class="category-button" type="button">${list_name}</button>
+      <button class="category-button ${classButton}" type="button">${list_name}</button>
     </li>`;
 }
 function categoriesTemplate(categoryList) {
@@ -40,10 +41,8 @@ const getData = async () => {
 
   // чекаємо на дані
   const cat = await getDataBooks('category-list');
-  cat.unshift({ list_name: 'ALL CATEGORIES' });
+  cat.unshift({ list_name: 'ALL CATEGORIES', classButton: 'active' });
   // малюємо дані на сторінці
-  /* renderCategories(cat); */
-  console.log(cat);
+  renderCategories(cat);
 };
 getData();
-console.log('category-list');
