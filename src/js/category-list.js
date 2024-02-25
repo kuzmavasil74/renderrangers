@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import { getDataBooks } from './Api/uBooksApi';
-/*
+
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
 function selectedCategory(e) {
@@ -33,7 +33,7 @@ function renderCategories(categoryList) {
 
   refs.categoryListElem.insertAdjacentHTML('beforeend', markup);
 }
-*/
+
 //aсинхронна функція чекає на відповідь з сервера
 const getData = async () => {
   //run loading написати загрузку
