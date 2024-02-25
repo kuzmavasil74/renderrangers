@@ -126,6 +126,19 @@ body.dark-theme .burger-menu-icon {
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
     1px 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
+
+.owl-light-icon {
+  display: none;
+}
+
+.owl-icon.show-icon {
+  display: block;
+}
+
+.owl-light-icon.show-icon {
+  display: none;
+}
+
 .burger-menu-btn {
   background-color: transparent;
   border: none;
@@ -175,7 +188,6 @@ body.dark-theme .burger-menu-icon {
     text-align: center;
     align-items: center;
     position: relative;
-    margin-right: 101px;
   }
   .user-btn,
   .header-nav-shop,

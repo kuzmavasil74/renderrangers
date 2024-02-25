@@ -10,6 +10,24 @@ checkboxInput.addEventListener('change', function () {
     localStorage.setItem('theme', '');
   }
 });
+
+
+  const checkbox = document.getElementById('checkbox');
+  const owlIcon = document.querySelector('.owl-icon');
+  const owlLightIcon = document.querySelector('.owl-light-icon');
+
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      owlIcon.style.display = 'block';
+      owlLightIcon.style.display = 'none';
+    } else {
+      owlIcon.style.display = 'none';
+      owlLightIcon.style.display = 'block';
+    }
+  });
+
+
+
 window.onload = setActive;
 function setActive() {
   let theme = localStorage.getItem('theme');
@@ -31,3 +49,5 @@ const mobilMenu = document.querySelector('.mobile-menu-container');
 burgerMenuBtn.addEventListener('click', function () {
 mobilMenu.classList.add('open-menu');
 });
+
+
