@@ -14,7 +14,6 @@ function renderSupportList(supportList) {
 }
 
 function createSupportItem(item, index) {
-  //що там в item
   const { title, url, img, srcset } = item;
 
   const li = document.createElement('li');
