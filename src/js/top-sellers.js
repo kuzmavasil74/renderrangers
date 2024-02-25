@@ -1,19 +1,41 @@
 import { getDataBooks } from './Api/uBooksApi';
+import { getLoader } from './helpers/loader';
+const sellerSection = document.querySelector('.seller-section');
 
-const booksList = document.getElementById('books-list');
+//  створення контейнеру для даних з серверу
+const booksList = document.createElement('ul');
+booksList.classList.add('sellers-list');
+booksList.innerHTML = `<span class="loader"></span>`;
+
+// розмітка секції
+sellerSection.innerHTML = `
+  <h1 class="section-title">
+    Best Sellers <span class="accent">Books</span>
+  </h1>`;
+sellerSection.appendChild(booksList); // додаємо пустий список книг
 
 // отримання даних з серверу
 export const getTopBooksData = async () => {
-  //run loading написати загрузку
+  // виводимо лоадер
+  getLoader();
 
   try {
     const topBooks = await getDataBooks('top-books'); // запит на сервер
     const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
     renderTopBooks(randomBooks); // рендер розмітки
+
+    // анімація завантаження на сторінку
+    const animatedCards = document.querySelectorAll('.sellers-item');
+    animatedCards.forEach(card => {
+      card.classList.add('animation-items');
+    });
+    const disappearance = setTimeout(() => {
+      animatedCards.forEach(card => {
+        card.classList.remove('animation-items');
+      });
+    }, 500);
   } catch (err) {
     console.error(err);
-  } finally {
-    // ховаємо лоадер
   }
 };
 
@@ -52,7 +74,7 @@ function createMarkUp(results) {
       <ul class="sellers-category-list">
         ${generateListItems(books)}
       </ul>
-      <button class="sellers-button" type="button">see more</button>
+      <button class="sellers-button" type="button">See more</button>
     `;
     fragment.appendChild(li);
   });
