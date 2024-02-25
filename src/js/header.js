@@ -26,20 +26,8 @@ function setActive() {
   }
 }
 
-/* const burgerMenuBtn = document.querySelector('.burger-menu-btn');
-const closeMenuBtn = document.querySelector('.close-menu-btn');
-const headerNav = document.querySelector('.header-nav');
-
+const burgerMenuBtn = document.querySelector('.burger-menu-btn');
+const mobilMenu = document.querySelector('.mobile-menu-container');
 burgerMenuBtn.addEventListener('click', function () {
-  burgerMenuBtn.classList.add('is-hidden');
-  closeMenuBtn.classList.remove('is-hidden');
-
-  headerNav.style.display = 'flex';
+mobilMenu.classList.add('open-menu');
 });
-
-closeMenuBtn.addEventListener('click', function () {
-  burgerMenuBtn.classList.remove('is-hidden');
-  closeMenuBtn.classList.add('is-hidden');
-
-  headerNav.style.display = 'none';
-}); */
