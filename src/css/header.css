@@ -82,6 +82,9 @@ body.dark-theme .burger-menu-icon {
   align-items: center;
   margin-left: auto;
 }
+.user-name-btn {
+  width: max-content;
+}
 
 .checkbox-theme {
   width: 40px;
@@ -243,7 +246,6 @@ body.dark-theme .burger-menu-icon {
   }
 
   .user-choice {
-    margin-left: 0;
     display: flex;
   }
 
@@ -263,8 +265,8 @@ body.dark-theme .burger-menu-icon {
     background-color: #fff;
     color: #111;
     padding: 15px 14px;
+    gap: 90px;
   }
-
   .user-btn:hover,
   .user-btn:focus {
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.15);
@@ -274,10 +276,5 @@ body.dark-theme .burger-menu-icon {
 
   .arrow-btn-icon {
     stroke: #eac645;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .user-btn {
-    gap: 90px;
   }
 }
