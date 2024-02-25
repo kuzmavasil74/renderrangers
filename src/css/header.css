@@ -155,8 +155,9 @@ body.dark-theme .burger-menu-icon {
 }
 .burger-menu-icon:hover,
 .burger-menu-icon:focus {
-  stroke: var(--yellow);
-  transform: rotate(360deg);
+  stroke: #4f2ee8;;
+  transform: rotateX(360deg);
+  transform: rotateY(360deg);
 }
 
 .close-menu-btn {
