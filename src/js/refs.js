@@ -5,6 +5,7 @@ export const refs = {
   categoryCardElem: document.querySelector('.js-category-card'),
   categoryCardSection: document.querySelector('.js-category'),
   topSellerSection: document.querySelector('.seller-section'),
+  shoppingListMain: document.querySelector('.js-shopping-main'),
   /* support */
   supportList: document.querySelector('.js-support-list'),
   scrollBtn: document.querySelector('.js-support-btn'),
