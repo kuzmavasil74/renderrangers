@@ -7,17 +7,18 @@ const closeModalButton = document.querySelector('.modal-close-button');
 const listButton = document.querySelector('.modal-list-button');
 
 // Open modalmenu
-export async function getDataBooks(id) {
+export async function getBookById(id) {
+  const data = await getDataBooks(id);
+  console.log(data);
+  /*
   document.addEventListener('keydown', escapeCloseModal);
-  const data = await getBooks(id);
   createModal(data);
-
   listButton.addEventListener('click', function () {
     toggleShoppingList(id);
     listButton.blur();
-  });
+  }); */
 }
-
+/* 
 function createModal(book) {
   modalBackdrop.style.display = 'flex';
 
@@ -109,3 +110,4 @@ function closeModal() {
   modalBackdrop.style.display = 'none';
   body.style.overflow = 'auto';
 }
+ */
