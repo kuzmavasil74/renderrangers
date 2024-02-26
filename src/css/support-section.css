@@ -8,7 +8,7 @@
     rgb(79, 46, 232) 18%,
     rgb(255, 255, 255) 100%
   );
-  max-width: 335px;
+  width: 335px;
   height: 460px;
   border-radius: 16px;
   display: flex;
