@@ -1,8 +1,10 @@
 console.log('category-card');
 import { getDataBooks } from './Api/uBooksApi';
 import renderMarkup from './helpers/renderMarkup';
+import { getBookById } from './modal';
 import { refs } from './refs';
 
+refs.mainContainer.addEventListener('click', handleMain);
 // Function to fetch and display category books
 export const getCategoryBooks = async params => {
   // Clear the container before inserting new category data
@@ -22,7 +24,10 @@ export const getCategoryBooks = async params => {
     console.error('Error fetching category books:', error);
   }
 };
-
+function handleMain(e) {
+  const id = e.target.closest('.sellers-item').dataset.id;
+  getBookById(id);
+}
 // Function to create markup for the category name
 function booksCategoryTemplate(categoryName, categoryBooks) {
   console.log(categoryBooks);
