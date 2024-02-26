@@ -2,6 +2,7 @@ import { refs } from './refs';
 import { getDataBooks } from './Api/uBooksApi';
 import { getCategoryBooks } from './category-card';
 import { getTopBooksData } from './top-sellers';
+import { getLoader } from './helpers/loader';
 
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
@@ -13,11 +14,12 @@ function selectedCategory(e) {
   const categoryName = e.target;
   categoryName.classList.add('active');
   if (categoryName.textContent === 'ALL CATEGORIES') {
-    // create function where using method foreach remove active
-    //then add class active for button
     //use localstorage for saving active item
+    // виводимо лоадер
+    getLoader();
     getTopBooksData();
   } else {
+    getLoader();
     getCategoryBooks({ category: categoryName.textContent });
   }
 }
