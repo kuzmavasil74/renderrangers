@@ -7,7 +7,7 @@ const closeModalButton = document.querySelector('.modal-close-button');
 const listButton = document.querySelector('.modal-list-button');
 
 // Open modalmenu
-export async function getDataBooks(id) {
+export async function getBookById(id) {
   document.addEventListener('keydown', escapeCloseModal);
   const data = await getBooks(id);
   createModal(data);
