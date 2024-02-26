@@ -28,7 +28,7 @@ export const getCategoryBooks = async params => {
     });
 
     refs.categoryCardElem.insertAdjacentHTML(
-      'beforebegin',
+      'afterbegin',
       booksCategoryTemplate(categoryName)
     );
 
