@@ -20,6 +20,15 @@ export const getCategoryBooks = async params => {
       'afterbegin',
       booksCategoryTemplate(categoryName, categoryBooks)
     );
+    const animatedCards = document.querySelectorAll('.sellers-item');
+    animatedCards.forEach(card => {
+      card.classList.add('animation-items');
+    });
+    const disappearance = setTimeout(() => {
+      animatedCards.forEach(card => {
+        card.classList.remove('animation-items');
+      });
+    }, 500);
   } catch (error) {
     console.error('Error fetching category books:', error);
   }
@@ -30,13 +39,11 @@ function handleMain(e) {
 }
 // Function to create markup for the category name
 function booksCategoryTemplate(categoryName, categoryBooks) {
-  console.log(categoryBooks);
   return `
   <section class="seller-section">
     <h1 class="section-title">${categoryName}</h1>
     <ul class="sellers-category-list flex-wrap">${renderMarkup(
       booksTemplate,
-      null,
       categoryBooks
     )}</ul>
 </section>

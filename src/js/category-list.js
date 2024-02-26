@@ -1,11 +1,11 @@
 import { refs } from './refs';
 import { getDataBooks } from './Api/uBooksApi';
 import { getCategoryBooks } from './category-card';
+import renderMarkup from './helpers/renderMarkup';
 import { getTopBooksData } from './top-sellers';
 /* import { getLoader } from './helpers/loader'; */
 
 refs.categoryListElem.addEventListener('click', selectedCategory);
-
 function selectedCategory(e) {
   if (e.target.nodeName !== 'BUTTON' || e.target.classList.contains('active')) {
     return; // користувач клікнув між кнопками
@@ -26,15 +26,6 @@ function categoryTemplate({ list_name, classButton = '' }) {
       <button class="category-button ${classButton}" type="button">${list_name}</button>
     </li>`;
 }
-function categoriesTemplate(categoryList) {
-  return categoryList.map(categoryTemplate).join('');
-}
-function renderCategories(categoryList) {
-  const markup = categoriesTemplate(categoryList);
-
-  refs.categoryListElem.insertAdjacentHTML('beforeend', markup);
-}
-
 //aсинхронна функція чекає на відповідь з сервера
 const getData = async () => {
   //run loading написати загрузку
@@ -43,6 +34,9 @@ const getData = async () => {
   const cat = await getDataBooks('category-list');
   cat.unshift({ list_name: 'ALL CATEGORIES', classButton: 'active' });
   // малюємо дані на сторінці
-  renderCategories(cat);
+  refs.categoryListElem.insertAdjacentHTML(
+    'beforeend',
+    renderMarkup(categoryTemplate, cat)
+  );
 };
 getData();
