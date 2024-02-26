@@ -11,7 +11,6 @@ checkboxInput.addEventListener('change', function () {
   }
 });
 
-
   const checkbox = document.getElementById('checkbox');
   const owlIcon = document.querySelector('.owl-icon');
   const owlLightIcon = document.querySelector('.owl-light-icon');
@@ -25,8 +24,6 @@ checkboxInput.addEventListener('change', function () {
       owlLightIcon.style.display = 'block';
     }
   });
-
-
 
 window.onload = setActive;
 function setActive() {
