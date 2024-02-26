@@ -1,6 +1,8 @@
 import { getDataBooks } from './Api/uBooksApi';
 import { getLoader } from './helpers/loader';
-const sellerSection = document.querySelector('.seller-section');
+import { getCategoryBooks } from './category-card';
+import { refs } from './refs';
+const sellerSection = document.querySelector('.js-main');
 
 //  створення контейнеру для даних з серверу
 const booksList = document.createElement('ul');
@@ -9,9 +11,11 @@ booksList.innerHTML = `<span class="loader"></span>`;
 
 // розмітка секції
 sellerSection.innerHTML = `
-  <h1 class="section-title">
-    Best Sellers <span class="accent">Books</span>
-  </h1>`;
+  <section class="seller-section">
+    <h1 class="section-title">
+      Best Sellers <span class="accent">Books</span>
+    </h1>
+  </section>`;
 sellerSection.appendChild(booksList); // додаємо пустий список книг
 
 // отримання даних з серверу
@@ -40,6 +44,19 @@ export const getTopBooksData = async () => {
 };
 
 getTopBooksData();
+
+// booksList.addEventListener('click', onCategoryClick);
+
+// async function onCategoryClick(event) {
+//   event.preventDefault();
+//   if (event.target.nodeName !== 'BUTTON') {
+//     return; // користувач клікнув між кнопками
+//   } 
+//   const categoryName = event.target
+//   const {catname} = categoryName.dataset
+//   console.log(catname);
+//   await getCategoryBooks({category: catname})
+// }
 
 //  функція для рандомного вибору 4 категорій з масиву книг
 function getRandomBooks(books, count) {
@@ -74,9 +91,9 @@ function createMarkUp(results) {
       <ul class="sellers-category-list">
         ${generateListItems(books)}
       </ul>
-      <button class="sellers-button" type="button">See more</button>
+      <button class="sellers-button" type="button" data-catname="${list_name}">See more</button>
     `;
-    
+
     fragment.appendChild(li);
   });
 
