@@ -1,7 +1,7 @@
 export const refs = {
   /* Після створкння розмітки тут прописуємо свії посилання на елементи в котрі буде вставлятись розмітка */
   /* category list  */
-  mainContainer: document.querySelector('js-main'),
+  mainContainer: document.querySelector('.js-main'),
   categoryListElem: document.querySelector('.js-category-list'),
   /* loadElem: document.querySelector('.js-loader'), */
   categoryCardElem: document.querySelector('.js-category-card'),

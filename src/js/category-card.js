@@ -6,8 +6,7 @@ import { refs } from './refs';
 // Function to fetch and display category books
 export const getCategoryBooks = async params => {
   // Clear the container before inserting new category data
-  refs.categoryCardElem.innerHTML = '';
-  refs.topSellerSection.innerHTML = '';
+  refs.mainContainer.innerHTML = '';
   try {
     // Fetch category books data from the server
     const categoryBooks = await getDataBooks('category', params);
@@ -27,35 +26,45 @@ export const getCategoryBooks = async params => {
       element.remove();
     });
 
-    refs.categoryCardElem.insertAdjacentHTML(
+    refs.mainContainer.insertAdjacentHTML(
       'afterbegin',
-      booksCategoryTemplate(categoryName)
+      booksCategoryTemplate(categoryName, categoryBooks)
     );
 
     // Insert the list of books on the page
-    renderMarkup(booksTemplate, refs.categoryCardElem, categoryBooks);
   } catch (error) {
     console.error('Error fetching category books:', error);
   }
 };
 
 // Function to create markup for the category name
-function booksCategoryTemplate(catTitle) {
+function booksCategoryTemplate(categoryName, categoryBooks) {
+  console.log(categoryBooks);
   return `
-      <h2 class="category-card-title">${catTitle}</h2>
+  <section class="seller-section">
+    <h2 class="section-title">${categoryName}</h2>
+    <ul class="sellers-category-list flex-wrap">${renderMarkup(
+      booksTemplate,
+      null,
+      categoryBooks
+    )}</ul>
+</section>
+      
     `;
 }
 
 // Function to create markup for a single book
 function booksTemplate({ book_image, title, author, _id }) {
   return `
-      <li class="card-book-item" data-id="${_id}">
-        <img class="card-book-image"
-        src="${book_image}"
-        alt="${title}"
-        >
-        <h3 class="card-book-title">${title}</h3>
-        <p class="card-book-author">${author}</p>
+      <li class="sellers-item" data-id="${_id}">
+        <div class="book-image-wrapper">
+          <img class="book-image"
+          src="${book_image}"
+          alt="${title}"
+          >
+        </div>
+        <h3 class="book-title">${title}</h3>
+        <p class="book-author">${author}</p>
       </li>
     `;
 }
