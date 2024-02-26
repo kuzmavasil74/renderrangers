@@ -109,6 +109,16 @@
   transform: scale(1.1);
 }
 
+body.dark-theme .sellers-button {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+body.dark-theme .sellers-button:hover,
+body.dark-theme .sellers-button:focus {
+  background-color: var(--violet);
+}
+
 /* loader */
 
 .loader {

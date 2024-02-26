@@ -2,31 +2,31 @@ import { getDataBooks } from './Api/uBooksApi';
 import { getLoader } from './helpers/loader';
 import { getCategoryBooks } from './category-card';
 import { refs } from './refs';
-const sellerSection = document.querySelector('.js-main');
 
-//  створення контейнеру для даних з серверу
-const booksList = document.createElement('ul');
-booksList.classList.add('sellers-list');
-booksList.innerHTML = `<span class="loader"></span>`;
 
-// розмітка секції
-sellerSection.innerHTML = `
-  <section class="seller-section">
-    <h1 class="section-title">
-      Best Sellers <span class="accent">Books</span>
-    </h1>
-  </section>`;
-sellerSection.appendChild(booksList); // додаємо пустий список книг
-
-// отримання даних з серверу
 export const getTopBooksData = async () => {
+  // розмітка секції
+  refs.mainContainer.innerHTML = `
+    <section class="seller-section">
+      <h1 class="section-title">
+        Best Sellers <span class="accent">Books</span>
+      </h1>
+    </section>`;
+
+  //  створення контейнеру для даних з серверу
+  const booksList = document.createElement('ul');
+  booksList.classList.add('sellers-list');
+  booksList.innerHTML = `<span class="loader"></span>`;
+  refs.mainContainer.appendChild(booksList); // додаємо пустий список книг
+
   // виводимо лоадер
+  const loader = refs.mainContainer.querySelector('.loader');
   getLoader();
 
   try {
     const topBooks = await getDataBooks('top-books'); // запит на сервер
     const randomBooks = getRandomBooks(topBooks, 4); // вибираємо 4 випадкові книги
-    renderTopBooks(randomBooks); // рендер розмітки
+    renderTopBooks(booksList, randomBooks); // рендер розмітки
 
     // анімація завантаження на сторінку
     const animatedCards = document.querySelectorAll('.sellers-item');
@@ -38,25 +38,36 @@ export const getTopBooksData = async () => {
         card.classList.remove('animation-items');
       });
     }, 500);
+
+    // додаємо слухач
+    booksList.addEventListener('click', onCategoryClick);
   } catch (err) {
     console.error(err);
   }
 };
 
+// рендер сторінки
+function renderTopBooks(booksList, topBooks) {
+  const fragment = createMarkUp(topBooks);
+  booksList.innerHTML = ''; // очищення вмісту перед додаванням нового
+  booksList.appendChild(fragment); // додавання фрагменту до DOM
+}
+
+// дефолтне завантаження сторінки
 getTopBooksData();
 
-// booksList.addEventListener('click', onCategoryClick);
+// функція обробника подій
+async function onCategoryClick(event) {
+  event.preventDefault();
+  if (event.target.nodeName !== 'BUTTON') {
+    return; // користувач клікнув між кнопками
+  }
+  const categoryName = event.target;
+  const { name } = categoryName.dataset;
 
-// async function onCategoryClick(event) {
-//   event.preventDefault();
-//   if (event.target.nodeName !== 'BUTTON') {
-//     return; // користувач клікнув між кнопками
-//   } 
-//   const categoryName = event.target
-//   const {catname} = categoryName.dataset
-//   console.log(catname);
-//   await getCategoryBooks({category: catname})
-// }
+  // виклик завантаження категорій
+  await getCategoryBooks({ category: name });
+}
 
 //  функція для рандомного вибору 4 категорій з масиву книг
 function getRandomBooks(books, count) {
@@ -72,13 +83,6 @@ function getRandomBooks(books, count) {
   return randomIndexes.map(index => books[index]);
 }
 
-// рендер сторінки
-function renderTopBooks(topBooks) {
-  const fragment = createMarkUp(topBooks);
-  booksList.innerHTML = ''; // очищення вмісту перед додаванням нового
-  booksList.appendChild(fragment); // додавання фрагменту до DOM
-}
-
 // створення розмітки категорій книг
 function createMarkUp(results) {
   const fragment = document.createDocumentFragment();
@@ -91,7 +95,7 @@ function createMarkUp(results) {
       <ul class="sellers-category-list">
         ${generateListItems(books)}
       </ul>
-      <button class="sellers-button" type="button" data-catname="${list_name}">See more</button>
+      <button class="sellers-button" type="button" data-name="${list_name}">See more</button>
     `;
 
     fragment.appendChild(li);
@@ -131,7 +135,7 @@ function getScreenSize() {
   const screenWidth = window.innerWidth;
   if (screenWidth < 768) {
     return 'mobile';
-  } else if (screenWidth < 1200) {
+  } else if (screenWidth < 1440) {
     return 'tablet';
   } else {
     return 'desktop';
