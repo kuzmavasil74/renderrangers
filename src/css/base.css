@@ -8,16 +8,6 @@
   --ff-primary: 'DM Sans', sans-serif;
 }
 
-ul,
-li,
-a,
-h1,
-h2,
-h3 {
-  list-style: none;
-  text-decoration: none;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -49,9 +39,14 @@ body.dark-theme h1 {
   gap: 40px;
   height: fit-content;
 }
+/* util... */
 .display-none {
   display: none;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 767.99px) {
   .sellers-item:nth-child(n + 2) {
     display: none;
@@ -74,6 +69,7 @@ body.dark-theme h1 {
 @media screen and (min-width: 1440px) {
   .container-flex-xl {
     display: flex;
+    gap: 40px;
   }
   .container {
     max-width: 1440px;

@@ -2,7 +2,7 @@ import { refs } from './refs';
 import { getDataBooks } from './Api/uBooksApi';
 import { getCategoryBooks } from './category-card';
 import { getTopBooksData } from './top-sellers';
-import { getLoader } from './helpers/loader';
+/* import { getLoader } from './helpers/loader'; */
 
 refs.categoryListElem.addEventListener('click', selectedCategory);
 
@@ -16,10 +16,8 @@ function selectedCategory(e) {
   if (categoryName.textContent === 'ALL CATEGORIES') {
     //use localstorage for saving active item
     // виводимо лоадер
-    getLoader();
     getTopBooksData();
   } else {
-    getLoader();
     getCategoryBooks({ category: categoryName.textContent });
   }
 }
