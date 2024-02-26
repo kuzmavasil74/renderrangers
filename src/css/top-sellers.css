@@ -66,7 +66,7 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--black);
+  /* color: var(--black); */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -107,6 +107,16 @@
   background-color: var(--violet);
   color: var(--white);
   transform: scale(1.1);
+}
+
+body.dark-theme .sellers-button {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+body.dark-theme .sellers-button:hover,
+body.dark-theme .sellers-button:focus {
+  background-color: var(--violet);
 }
 
 /* loader */
