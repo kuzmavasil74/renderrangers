@@ -11,27 +11,13 @@ export const getCategoryBooks = async params => {
     // Fetch category books data from the server
     const categoryBooks = await getDataBooks('category', params);
 
-    // Remove existing category title if it exists
-    const existingCategoryTitle = refs.categoryCardElem.querySelector(
-      '.category-card-title'
-    );
-    if (existingCategoryTitle) {
-      existingCategoryTitle.remove();
-    }
-
     // Insert the category name on the page
     const categoryName = categoryBooks[0].list_name;
-
-    document.querySelectorAll('.category-card-title').forEach(element => {
-      element.remove();
-    });
 
     refs.mainContainer.insertAdjacentHTML(
       'afterbegin',
       booksCategoryTemplate(categoryName, categoryBooks)
     );
-
-    // Insert the list of books on the page
   } catch (error) {
     console.error('Error fetching category books:', error);
   }
@@ -42,14 +28,13 @@ function booksCategoryTemplate(categoryName, categoryBooks) {
   console.log(categoryBooks);
   return `
   <section class="seller-section">
-    <h2 class="section-title">${categoryName}</h2>
+    <h1 class="section-title">${categoryName}</h1>
     <ul class="sellers-category-list flex-wrap">${renderMarkup(
       booksTemplate,
       null,
       categoryBooks
     )}</ul>
 </section>
-      
     `;
 }
 
