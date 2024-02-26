@@ -1,20 +1,24 @@
 .mobile-menu-container {
   display: none;
+  position: relative;
+}
+
+.mobile-menu-container:hover .menu-box {
+  display: block;
 }
 
 .menu-box {
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 99; */
-  /* width: 375px;
-  height: 100vh; */
+  z-index: 99;
+  width: 375px;
+  height: 100vh;
   background: radial-gradient(189% 190% at 60% -24%, rgb(79, 46, 232) 18%, rgb(255, 255, 255) 100%);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  overflow: hidden;
 
 }
 
