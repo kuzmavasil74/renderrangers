@@ -25,14 +25,13 @@ function createModal(book) {
     book.buy_links.find(link => link.name === 'Amazon')?.url || '';
   const appleBooksUrl =
     book.buy_links.find(link => link.name === 'Apple Books')?.url || '';
-
   const buyLinksListHTML = `
   <ul class="buy-links-list">
     <li>
-      <img src="./icons/support/amazon-1x.jpg" alt="Amazon" class="platform-image" data-url="${amazonUrl}">
+      <img src="./img/amazon-1x.jpg" alt="Amazon" class="platform-image" data-url="${amazonUrl}">
     </li>
     <li>
-      <img src="./icons/support/modal-book-1x.jpg" alt="Apple Books" class="platform-image" data-url="${appleBooksUrl}">
+      <img src="./img/modal-book-1x.jpg" alt="Apple Books" class="platform-image" data-url="${appleBooksUrl}">
     </li>
   </ul>
 `;
