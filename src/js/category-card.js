@@ -1,5 +1,6 @@
 console.log('category-card');
 import { getDataBooks } from './Api/uBooksApi';
+import animatedCardsFunction from './helpers/animatedCard';
 import renderMarkup from './helpers/renderMarkup';
 import { getBookById } from './modal';
 import { refs } from './refs';
@@ -15,20 +16,14 @@ export const getCategoryBooks = async params => {
 
     // Insert the category name on the page
     const categoryName = categoryBooks[0].list_name;
-
     refs.mainContainer.insertAdjacentHTML(
       'afterbegin',
       booksCategoryTemplate(categoryName, categoryBooks)
     );
+    //animation
     const animatedCards = document.querySelectorAll('.sellers-item');
-    animatedCards.forEach(card => {
-      card.classList.add('animation-items');
-    });
-    const disappearance = setTimeout(() => {
-      animatedCards.forEach(card => {
-        card.classList.remove('animation-items');
-      });
-    }, 500);
+    animatedCardsFunction(animatedCards);
+    //animation
   } catch (error) {
     console.error('Error fetching category books:', error);
   }

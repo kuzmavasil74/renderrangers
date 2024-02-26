@@ -10,20 +10,17 @@ const listButton = document.querySelector('.modal-list-button');
 export async function getBookById(id) {
   const data = await getDataBooks(id);
   console.log(data);
-  /*
-  document.addEventListener('keydown', escapeCloseModal);
   createModal(data);
+
+  document.addEventListener('keydown', escapeCloseModal);
   listButton.addEventListener('click', function () {
     toggleShoppingList(id);
     listButton.blur();
-  }); */
+  });
 }
-/* 
 function createModal(book) {
   modalBackdrop.style.display = 'flex';
-
   body.style.overflow = 'hidden';
-
   const amazonUrl =
     book.buy_links.find(link => link.name === 'Amazon')?.url || '';
   const appleBooksUrl =
@@ -110,4 +107,3 @@ function closeModal() {
   modalBackdrop.style.display = 'none';
   body.style.overflow = 'auto';
 }
- */
