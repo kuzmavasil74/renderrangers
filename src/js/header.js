@@ -25,11 +25,12 @@ checkboxInput.addEventListener('change', function () {
     }
   });
 
+  
 window.onload = setActive;
 function setActive() {
   let theme = localStorage.getItem('theme');
   if (theme === 'dark-theme') {
-    body.classList.add(theme);
+    document.body.classList.add(theme);
     checkboxInput.checked = true;
   }
   const aObj = document.querySelector('.header-nav').getElementsByTagName('a');
@@ -44,7 +45,5 @@ function setActive() {
 const burgerMenuBtn = document.querySelector('.burger-menu-btn');
 const mobilMenu = document.querySelector('.mobile-menu-container');
 burgerMenuBtn.addEventListener('click', function () {
-mobilMenu.classList.add('open-menu');
+  mobilMenu.classList.add('open-menu');
 });
-
-
