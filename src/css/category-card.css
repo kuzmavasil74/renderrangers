@@ -15,11 +15,11 @@
 }
 /* h2 */
 .category-card-title {
-  position: absolute;
+  /* position: absolute;
   top: -24px;
   left: 0;
   font-size: 48px;
-  line-height: 52px;
+  line-height: 52px; */
   padding-bottom: 40px;
 }
 /* li */
@@ -54,4 +54,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 767.99px) {
+  .sellers-exclude .sellers-item {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1439.99px) {
+  .sellers-exclude .sellers-item {
+    display: block;
+  }
 }

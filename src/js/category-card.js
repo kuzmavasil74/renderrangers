@@ -34,29 +34,33 @@ function handleMain(e) {
 }
 // Function to create markup for the category name
 function booksCategoryTemplate(categoryName, categoryBooks) {
+  const words = categoryName.split(' ');
+  const lastWord = words.pop();
+  words.push(`<span class="accent">${lastWord}</span>`);
+
   return `
-  <section class="seller-section">
-    <h1 class="section-title">${categoryName}</h1>
-    <ul class="sellers-category-list flex-wrap">${renderMarkup(
-      booksTemplate,
-      categoryBooks
-    )}</ul>
-</section>
-    `;
+    <section class="seller-section">
+      <h1 class="section-title category-card-title">${words.join(' ')}</h1>
+      <ul class="sellers-category-list sellers-exclude flex-wrap">${renderMarkup(
+        booksTemplate,
+        categoryBooks
+      )}</ul>
+    </section>
+  `;
 }
 
 // Function to create markup for a single book
 function booksTemplate({ book_image, title, author, _id }) {
   return `
-      <li class="sellers-item" data-id="${_id}">
-        <div class="book-image-wrapper">
-          <img class="book-image"
-          src="${book_image}"
-          alt="${title}"
-          >
-        </div>
-        <h3 class="book-title">${title}</h3>
-        <p class="book-author">${author}</p>
-      </li>
-    `;
+    <li class="sellers-item" data-id="${_id}">
+      <div class="book-image-wrapper">
+        <img class="book-image"
+        src="${book_image}"
+        alt="${title}"
+        >
+      </div>
+      <h3 class="book-title">${title}</h3>
+      <p class="book-author">${author}</p>
+    </li>
+  `;
 }
